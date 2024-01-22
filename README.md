@@ -11,11 +11,11 @@ N/A
 
 The website can be accessed via the link included in the About section of the repository or below:
 
+[Password Generator website](https://marijapastu.github.io/Password-Generator/)
 
+The password is generated and displayed on the website as per below screenshot. 
 
-The solution of this challenge is printed to the console of the website and displayed below. 
-
-
+![Screenshot 2024-01-22 at 19 19 18](https://github.com/marijapastu/Password-Generator/assets/152328028/fdc8785e-0169-41d2-a9fe-288a6d4db46e)
 
 ## Credits
 
