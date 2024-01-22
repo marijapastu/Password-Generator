@@ -183,7 +183,7 @@ function generatePassword() {
           password +=  randomLetter;
         }
         
-        return password;
+    return password;
 
   }
   
