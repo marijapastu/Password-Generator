@@ -146,7 +146,48 @@ function getRandom(arr){
 getRandom();
 
 // Function to generate password with user input
+
 function generatePassword() {
+
+  var userChoice = getPasswordOptions();
+  var newArr = [];
+  console.log(userChoice);
+
+  // validation that user selected at least one character set type
+
+  if  (userChoice[1] == "No" && userChoice[2] == "No" && userChoice[3] == "No" && userChoice[4] == "No") {
+    alert("You have to select at least one type of character set");
+  } else {
+
+        if (userChoice[1] == "Yes") {
+        newArr = newArr.concat(specialCharacters);
+      }
+
+        if (userChoice[2] == "Yes") {
+          newArr = newArr.concat(numericCharacters);
+        }
+
+        if (userChoice[3] == "Yes") {
+          newArr = newArr.concat(upperCasedCharacters);
+        }
+
+        if (userChoice[4] == "Yes") {
+          newArr = newArr.concat(lowerCasedCharacters);
+        }
+
+        // password generation
+    
+        password = "";
+        
+        for (let i = 0; i < userChoice[0]; i++) {
+          var randomLetter = getRandom(newArr);
+          password +=  randomLetter;
+        }
+        
+        return password;
+
+  }
+  
 
 };
 generatePassword();
