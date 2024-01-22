@@ -90,30 +90,62 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var passwordLen = parseInt(prompt("Please enter the length of your password from 8 to 128 characters"));
-    if (passwordLen < 8 || passwordLen > 128) {
-      alert("The password legth is outside of allowed range of characters again");
-    } else {
-        var specialChar = prompt("Please type 'Yes/No' if you would like to include special characters in your password");
-        var numericChar = prompt("Please type 'Yes/No' if you would like to include numeric characters in your password");
-        var upperCasedChar = prompt("Please type 'Yes/No' if you would like to include upper case characters in your password");
-        var lowerCasedChar = prompt("Please type 'Yes/No' if you would like to include lower case characters in your password");
-      }
-    }
 
-getPasswordOptions();
+  
+  var passwordLen = parseInt(prompt("Please enter the length of your password from 8 to 128 characters"));
+
+  // validating password length inputted by the user
+
+    if (passwordLen < 8 || passwordLen > 128 || passwordLen === "" || isNaN(passwordLen) ) {
+      alert("The password legth is outside of allowed range, please try again");
+
+    // validating user input - set of characters choice
+
+    } else { 
+      var specialChar = prompt("Please type 'Yes/No' if you would like to include special characters in your password");      
+        if (specialChar !== "Yes" && specialChar !== "No") {
+          alert("Please type 'Yes/No'");
+
+        } else { 
+            var numericChar = prompt("Please type 'Yes/No' if you would like to include numeric characters in your password");            
+            if (numericChar !== "Yes" && numericChar !== "No") {
+              alert("Please type 'Yes/No'");
+
+            } else {       
+              var upperCasedChar = prompt("Please type 'Yes/No' if you would like to include upper case characters in your password");             
+              if (upperCasedChar !== "Yes" && upperCasedChar !== "No") {
+                alert("Please type 'Yes/No'");
+
+              } else {
+                var lowerCasedChar = prompt("Please type 'Yes/No' if you would like to include lower case characters in your password");                
+                    if (lowerCasedChar !== "Yes" && lowerCasedChar !== "No") {
+                    alert("Please type 'Yes/No'");
+                  } 
+                }
+                
+            }
+
+      }
+      
+      return [passwordLen,specialChar,numericChar,upperCasedChar,lowerCasedChar];
+      
+    }
+}
+
 
 // Function for getting a random element from an array
-function getRandom(arr) {
+
+function getRandom(arr){
 
 }
 
-console.log(getRandom());
+getRandom();
 
 // Function to generate password with user input
 function generatePassword() {
 
-}
+};
+generatePassword();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
@@ -128,6 +160,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-
-
 
