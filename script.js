@@ -143,7 +143,6 @@ function getRandom(arr){
 
 }
 
-getRandom();
 
 // Function to generate password with user input
 
