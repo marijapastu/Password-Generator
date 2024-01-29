@@ -101,33 +101,11 @@ function getPasswordOptions() {
     
 
    
-      var specialChar = prompt("Please type 'yes/no' if you would like to include special characters in your password");
-      while (specialChar !== "yes" && specialChar !== "no") {
-        alert("you have to type 'yes' or 'no' ");
-        var specialChar = (prompt("Please type 'yes/no' if you would like to include special characters in your password"));
-      }
-      
-
-      var numericChar = (prompt("Please type 'yes/no' if you would like to include numeric characters in your password"));            
-      while (numericChar !== "yes" && numericChar !== "no") {
-        alert("you have to type 'yes' or 'no' ");
-        var numericChar = (prompt("Please type 'yes/no' if you would like to include special characters in your password"));
-      }
-      
-
-      var upperCasedChar = (prompt("Please type 'yes/no' if you would like to include upper case characters in your password"));        
-      while (upperCasedChar !== "yes" && upperCasedChar !== "no") {
-        alert("you have to type 'yes' or 'no' ");
-        var upperCasedChar = (prompt("Please type 'yes/no' if you would like to include special characters in your password"));
-      }
-
-      var lowerCasedChar = (prompt("Please type 'yes/no' if you would like to include numeric characters in your password"));        
-      while (lowerCasedChar!== "yes" && lowerCasedChar !== "no") {
-        alert("you have to type 'yes' or 'no' ");
-        var lowerCasedChar = (prompt("Please type 'yes/no' if you would like to include special characters in your password"));
-
-      }
-          
+      var specialChar = confirm("Would like to include special characters in your password")
+      var numericChar = confirm("Would like to include numeric characters in your password");            
+      var upperCasedChar = confirm("Would like to include upper case characters in your password");        
+      var lowerCasedChar = confirm("Would like to include numeric characters in your password");        
+                
  
   return [passwordLen,specialChar,numericChar,upperCasedChar,lowerCasedChar];
       
@@ -156,23 +134,23 @@ function generatePassword() {
 
   // validation that user selected at least one character set type
 
-  if  (userChoice[1] == "no" && userChoice[2] == "no" && userChoice[3] == "no" && userChoice[4] == "no") {
+  if  (!userChoice[1] && !userChoice[2] && !userChoice[3] && !userChoice[4]) {
     alert("You have to select at least one type of character set");
   } else {
 
-        if (userChoice[1] == "yes") {
+        if (userChoice[1]) {
         newArr = newArr.concat(specialCharacters);
       }
 
-        if (userChoice[2] == "yes") {
+        if (userChoice[2]) {
           newArr = newArr.concat(numericCharacters);
         }
 
-        if (userChoice[3] == "yes") {
+        if (userChoice[3]) {
           newArr = newArr.concat(upperCasedCharacters);
         }
 
-        if (userChoice[4] == "yes") {
+        if (userChoice[4]) {
           newArr = newArr.concat(lowerCasedCharacters);
         }
 
